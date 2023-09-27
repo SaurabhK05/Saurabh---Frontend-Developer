@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap");
+
+.spacex-header {
+  text-align: start;
+  font-family: "Poppins", sans-serif;
+  padding: 0 5rem;
+}
+.header-horizental-row {
+  border: 1px solid whitesmoke;
+}

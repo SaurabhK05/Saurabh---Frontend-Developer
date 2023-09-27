@@ -1,0 +1,53 @@
+.main-banner {
+  display: flex;
+  padding: 1rem 5rem;
+  width: inherit;
+  justify-content: space-between;
+}
+
+.left-banner {
+  width: 50%;
+}
+
+.banner-title {
+  text-align: start;
+  color: #5b5555;
+}
+
+.banner-detail {
+  text-align: start;
+  color: #535151;
+}
+
+.img-banner {
+  width: 40%;
+}
+
+.img-banner > img {
+  width: 100%;
+  border: 10px solid #d9d9d9;
+  border-radius: 30px;
+}
+
+.banner-action-btn {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.banner-learn-more,
+.banner-wiki {
+  height: 2rem;
+  width: 7rem;
+  border: none;
+  border-radius: 8px;
+  background: #4e4d4d;
+  color: white;
+  cursor: pointer;
+}
+
+.banner-wiki {
+  background-color: #d1d1d1;
+  color: black;
+  border: 1px solid gray;
+}

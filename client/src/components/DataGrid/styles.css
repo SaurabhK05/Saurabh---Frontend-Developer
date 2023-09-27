@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap");
+
+.main-data-grid {
+  padding: 1rem 5rem;
+}
+
+.search-spacex-btn {
+  height: 2.6rem;
+  width: 8rem;
+  border: none;
+  border-radius: 8px;
+  background: #4e4d4d;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.search-spacex-title {
+  text-align: start;
+}
+
+.search-spacex-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#search-spacex-input {
+  width: 40%;
+  border: 2px solid #cfcfcf;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  margin-right: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+.data-grid-card-learn-more,
+.data-grid-card-wiki {
+  height: 2rem;
+  width: 7rem;
+  border: none;
+  border-radius: 8px;
+  background: #4e4d4d;
+  color: white;
+  cursor: pointer;
+}
+
+.data-grid-card-wiki {
+  background-color: #d1d1d1;
+  color: black;
+  border: 1px solid gray;
+}
+
+.data-grid {
+  padding: 2rem 2rem;
+}

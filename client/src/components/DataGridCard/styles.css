@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap");
+
+.data-grid-card {
+  width: 25%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.data-grid-card > img {
+  width: 100%;
+  height: 190px;
+}
+
+.data-grid-card-details {
+  padding: 0 1rem;
+  text-align: start;
+}
+
+.data-grid-card-details-desc {
+  color: gray;
+}
+
+.data-grid-card-details-header {
+  font-weight: 300;
+}
+
+.data-grid-card-action-btn {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
