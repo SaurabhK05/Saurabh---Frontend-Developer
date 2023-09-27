@@ -1,9 +1,4 @@
-.spinner-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 #spinner {
   width: 3%;
+  margin: auto 50%;
 }

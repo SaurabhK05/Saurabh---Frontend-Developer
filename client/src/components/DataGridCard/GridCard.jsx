@@ -1,7 +1,18 @@
 import React from "react";
+import PopupContent from "../PopupDialog/PopupContent";
 import "./styles.css";
 
 export default function GridCard(props) {
+  const [isPopupOpen, setIsPopupOpen] = React.useState(false);
+
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+
   const rocketData = props.cardData;
   return (
     <div className="data-grid-card">
@@ -14,7 +25,12 @@ export default function GridCard(props) {
             : rocketData.description}
         </p>
         <div className="data-grid-card-action-btn">
-          <button className="data-grid-card-learn-more">Learn More</button>
+          <button onClick={openPopup} className="data-grid-card-learn-more">
+            Learn More
+          </button>
+          {isPopupOpen && (
+            <PopupContent onClose={closePopup} data={rocketData} />
+          )}
           <a href={rocketData.wikipedia} target="blank">
             <button className="data-grid-card-wiki">Wiki</button>
           </a>

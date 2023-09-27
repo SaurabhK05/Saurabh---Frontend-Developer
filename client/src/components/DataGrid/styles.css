@@ -54,4 +54,10 @@
 
 .data-grid {
   padding: 2rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.data-grid-card:last-child {
+  margin-right: 0rem;
 }

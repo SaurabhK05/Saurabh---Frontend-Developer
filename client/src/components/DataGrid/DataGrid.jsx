@@ -5,6 +5,7 @@ import GridCard from "../DataGridCard/GridCard";
 
 export default function DataGrid() {
   const [allRocketData, setAllRocketData] = React.useState(null);
+  const [searchInput, setSearchInput] = React.useState("");
 
   const fetchData = async () => {
     const url = "https://api.spacexdata.com/v4/rockets";
@@ -15,7 +16,6 @@ export default function DataGrid() {
 
   useEffect(() => {
     fetchData();
-    console.log(allRocketData);
   }, []);
 
   return (
@@ -28,17 +28,28 @@ export default function DataGrid() {
             name="search rocket"
             id="search-spacex-input"
             placeholder="Search rocket by name and country"
+            onChange={(event) => {
+              setSearchInput(event.target.value);
+            }}
           />
-          <button className="search-spacex-btn">Search</button>
         </div>
       </div>
       <div className="data-grid">
         {!allRocketData ? (
           <Spinner />
         ) : (
-          allRocketData.map((el) => {
-            return <GridCard cardData={el} />;
-          })
+          allRocketData
+            .filter((el) => {
+              if (
+                el.name.toUpperCase().includes(searchInput.toUpperCase()) ||
+                el.country.toUpperCase().includes(searchInput.toUpperCase())
+              ) {
+                return el;
+              }
+            })
+            .map((el) => {
+              return <GridCard cardData={el} key={el.id} />;
+            })
         )}
       </div>
     </div>
