@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const dotEnv = require("dotenv").config().parsed;
 
 const users = {
-  user12: { password: "password1" },
+  user1: { password: "password1" },
   user2: { password: "password2" },
 };
 
@@ -18,7 +18,6 @@ function authorizeUser(req, res, next) {
 
   try {
     const decoded = jwt.verify(token, dotEnv.secretKey);
-    req.user = decoded;
     if (decoded.username in users) {
       next();
     } else {
