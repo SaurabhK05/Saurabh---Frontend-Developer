@@ -2,9 +2,19 @@ import React, { useEffect } from "react";
 import Cookies from "js-cookie";
 import Spinner from "../Spinner/Spinner";
 import "./styles.css";
+import PopupContent from "../PopupDialog/PopupContent";
 
 export default function Banner() {
   const [rocketData, setRocketData] = React.useState(null);
+  const [isPopupOpen, setIsPopupOpen] = React.useState(false);
+
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
 
   const fetchRocketData = async () => {
     const url = "http://localhost:5000/rocket/get-one-rocket";
@@ -21,7 +31,6 @@ export default function Banner() {
   };
   useEffect(() => {
     fetchRocketData();
-    console.log("kk");
   }, []);
 
   return (
@@ -34,7 +43,12 @@ export default function Banner() {
             <h1 className="banner-title">{rocketData.data.name}</h1>
             <p className="banner-detail">{rocketData.data.description}</p>
             <div className="banner-action-btn">
-              <button className="banner-learn-more">Learn More</button>
+              <button className="banner-learn-more" onClick={openPopup}>
+                Learn More
+              </button>
+              {isPopupOpen && (
+                <PopupContent onClose={closePopup} data={rocketData.data} />
+              )}
               <a href={rocketData.data.wikipedia} target="blank">
                 <button className="banner-wiki">Wiki</button>
               </a>
@@ -47,4 +61,16 @@ export default function Banner() {
       )}
     </div>
   );
+}
+
+{
+  /* <div className="data-grid-card-action-btn">
+  <button onClick={openPopup} className="data-grid-card-learn-more">
+    Learn More
+  </button>
+  {isPopupOpen && <PopupContent onClose={closePopup} data={rocketData} />}
+  <a href={rocketData.wikipedia} target="blank">
+    <button className="data-grid-card-wiki">Wiki</button>
+  </a>
+</div>; */
 }
