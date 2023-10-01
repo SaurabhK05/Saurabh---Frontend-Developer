@@ -1,19 +1,26 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import LandingPage from "./layouts/LandingPage/LandingPage";
 import Login from "./layouts/LoginPage/Login";
 import "./App.css";
 
 const App = () => {
-  // const date = new Date();
-  // date.setTime(date.getTime() + 60 * 60 * 1000);
-  // console.log(date);
-  // document.cookie = `token=${token}; expires=${date}`;
+  const isAuthenticated = useSelector((state) => state.isAuthUser);
+
+  React.useEffect(() => {
+    console.log(isAuthenticated);
+  }, [isAuthenticated]);
   return (
     <div className="App">
       <Routes>
+        <Route
+          path="/"
+          element={
+            isAuthenticated ? <LandingPage /> : <Navigate to="/login" replace />
+          }
+        />
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<LandingPage />} />
       </Routes>
     </div>
   );

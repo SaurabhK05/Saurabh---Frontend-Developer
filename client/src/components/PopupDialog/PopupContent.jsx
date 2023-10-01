@@ -8,54 +8,78 @@ function PopupContent(props) {
   return (
     <div className="popup">
       <div className="popup-content">
-        <div className="rocket-general-details">
-          <h3>Rocket General Details</h3>
-          <p>Rocket Company: {rocketData.company}</p>
-          <p>Rocket Name: {rocketData.name}</p>
-          <p>Rocket Launch From: {rocketData.country}</p>
-          <p className="cost-per-launch">
-            Cost per launch: ${rocketData.cost_per_launch}
-          </p>
-          <p>Frist Flight of rocket: {rocketData.first_flight}</p>
-          <p>Rocket Success Rate: {rocketData.success_rate_pct}%</p>
+        <div className="popup-header">
+          <p className="rocket-name">{rocketData.name.toUpperCase()}</p>
+          <button onClick={onClose} className="popup-close-btn">
+            X
+          </button>
         </div>
-
-        <div className="rocket-specs">
-          <h3> Rocekt Specification</h3>
-          <p className="rocket-height">
-            Height: {rocketData.height.meters} meters
-          </p>
-          <p className="rocket-diameter">
-            Diameter: {rocketData.diameter.meters} meters
-          </p>
-          <p className="rocket-mass">Mass: {rocketData.mass.kg} KG</p>
-          <p className="landing-legs">
-            Rocket has {rocketData.landing_legs.number} landing legs
-          </p>
+        <h1 className="rocket-overview">OVERVIEW</h1>
+        <div className="rocket-details">
+          <div className="rocket-d1">
+            <h5>HEIGHT</h5>
+            <div className="value">
+              <p>{rocketData.height.meters.toLocaleString()} m &nbsp;</p>
+              <p>/ {rocketData.height.feet.toLocaleString()} ft</p>
+            </div>
+          </div>
+          <hr />
+          <div className="rocket-d1">
+            <h5>DIAMETER</h5>
+            <div className="value">
+              <p>{rocketData.diameter.meters.toLocaleString()} m&nbsp;</p>
+              <p>/ {rocketData.diameter.feet.toLocaleString()} ft</p>
+            </div>
+          </div>
+          <hr />
+          <div className="rocket-d1">
+            <h5>MASS</h5>
+            <div className="value">
+              <p>{rocketData.mass.kg.toLocaleString()} kg&nbsp;</p>
+              <p>/ {rocketData.mass.lb.toLocaleString()} lb</p>
+            </div>
+          </div>
+          <hr />
+          <div className="rocket-d1">
+            <h5>THRUST AT SEA LEVEL</h5>
+            <div className="value">
+              <p>
+                {rocketData.engines.thrust_sea_level.kN.toLocaleString()}{" "}
+                kN&nbsp;
+              </p>
+              <p>
+                / {rocketData.engines.thrust_sea_level.lbf.toLocaleString()} lbf
+              </p>
+            </div>
+          </div>
+          <hr />
+          <div className="rocket-d1">
+            <h5>THRUST IN VACUUM</h5>
+            <div className="value">
+              <p>
+                {rocketData.engines.thrust_vacuum.kN.toLocaleString()} kN&nbsp;
+              </p>
+              <p>
+                / {rocketData.engines.thrust_vacuum.lbf.toLocaleString()} lbf
+              </p>
+            </div>
+          </div>
+          <hr />
+          <div className="rocket-d1">
+            <h5>COST PER LAUNCH</h5>
+            <div className="value">
+              <p>$ {rocketData.cost_per_launch.toLocaleString()}</p>
+            </div>
+          </div>
+          <hr />
+          <div className="rocket-d1">
+            <h5>SUCCESS RATE</h5>
+            <div className="value">
+              <p>{rocketData.success_rate_pct} %</p>
+            </div>
+          </div>
+          <hr />
         </div>
-        <div className="engine-spec">
-          <h3> Engine Specification</h3>
-          <p className="engine-number">
-            No of Engine: {rocketData.engines.number}
-          </p>
-          <p className="engine-type">
-            Type of Engine: {rocketData.engines.type}
-          </p>
-          <p className="engine-version">
-            Engine Version: {rocketData.engines.version}
-          </p>
-          <p className="engine-layout">
-            Engine Layout: {rocketData.engines.layout}
-          </p>
-          <p className="engine-propellant">
-            Engine Propellant:{" "}
-            {rocketData.engines.propellant_1 +
-              ", " +
-              rocketData.engines.propellant_2}
-          </p>
-        </div>
-
-        <button onClick={onClose}>Close Popup</button>
       </div>
     </div>
   );

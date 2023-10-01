@@ -1,11 +1,17 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const userRoute = require("./routes/UserRoute.js");
 const rocketRoute = require("./routes/RocketDataRoute.js");
 
 const app = express();
 const port = 5000;
 
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 app.use(bodyParser.json());
 
 app.use("/user", userRoute);

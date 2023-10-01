@@ -1,21 +1,30 @@
 import React, { useEffect } from "react";
-import "./styles.css";
-import Spinner from "../Spinner/Spinner";
 import GridCard from "../DataGridCard/GridCard";
+import Spinner from "../Spinner/Spinner";
+import Cookies from "js-cookie";
+import "./styles.css";
 
 export default function DataGrid() {
   const [allRocketData, setAllRocketData] = React.useState(null);
   const [searchInput, setSearchInput] = React.useState("");
 
   const fetchData = async () => {
-    const url = "https://api.spacexdata.com/v4/rockets";
-    await fetch(url)
+    const url = "http://localhost:5000/rocket/get-all-rockets";
+    await fetch(url, {
+      headers: {
+        Authorization: Cookies.get("jwt"),
+      },
+    })
       .then((res) => res.json())
-      .then((data) => setAllRocketData(data));
+      .then((data) => {
+        console.log(data);
+        setAllRocketData(data);
+      });
   };
 
   useEffect(() => {
     fetchData();
+    console.log("11");
   }, []);
 
   return (
@@ -38,7 +47,7 @@ export default function DataGrid() {
         {!allRocketData ? (
           <Spinner />
         ) : (
-          allRocketData
+          allRocketData.data
             .filter((el) => {
               if (
                 el.name.toUpperCase().includes(searchInput.toUpperCase()) ||

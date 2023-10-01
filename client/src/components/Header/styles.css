@@ -8,3 +8,26 @@
 .header-horizental-row {
   border: 1px solid whitesmoke;
 }
+
+.header-conect {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout100-form-btn {
+  font-size: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  width: fit-content;
+  height: 50px;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  border: none;
+  transition: all 0.4s;
+  cursor: pointer;
+  margin-right: 5rem;
+}
