@@ -61,3 +61,68 @@
 .data-grid-card:last-child {
   margin-right: 0rem;
 }
+
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .main-data-grid {
+    padding: 0.2rem 2rem;
+  }
+
+  .search-spacex-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #search-spacex-input {
+    width: 100%;
+    border: 2px solid #cfcfcf;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    margin-right: 0;
+  }
+
+  .data-grid {
+    padding: 2rem 0rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #search-spacex-input {
+    width: 70%;
+    border: 2px solid #cfcfcf;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    margin-right: 0rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+  }
+
+  .data-grid {
+    padding: 2rem 0rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .data-grid div:nth-child(odd) {
+    margin-right: 1rem;
+  }
+
+  .data-grid-card-learn-more,
+  .data-grid-card-wiki {
+    height: 2rem;
+    width: 6rem;
+    border: none;
+    border-radius: 8px;
+    background: #4e4d4d;
+    color: white;
+    cursor: pointer;
+  }
+}

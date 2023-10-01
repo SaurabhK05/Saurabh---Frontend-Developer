@@ -31,3 +31,33 @@
   cursor: pointer;
   margin-right: 5rem;
 }
+
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .header-conect {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .spacex-header {
+    text-align: start;
+    font-family: "Poppins", sans-serif;
+    padding: 0 2rem;
+  }
+  .logout100-form-btn {
+    font-size: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 30px;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    border: none;
+    transition: all 0.4s;
+    cursor: pointer;
+    margin-right: 2rem;
+  }
+}

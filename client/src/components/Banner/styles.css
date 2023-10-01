@@ -51,3 +51,55 @@
   color: black;
   border: 1px solid gray;
 }
+
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .main-banner {
+    display: flex;
+    padding: 1rem 2rem;
+    width: inherit;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .left-banner {
+    width: 100%;
+    order: 2;
+  }
+  .banner-action-btn {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .img-banner {
+    width: 100%;
+    order: 1;
+  }
+  .img-banner > img {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .main-banner {
+    display: flex;
+    padding: 1rem 5rem;
+    width: inherit;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .banner-action-btn {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .img-banner {
+    width: 50%;
+  }
+  .img-banner > img {
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+  }
+}
