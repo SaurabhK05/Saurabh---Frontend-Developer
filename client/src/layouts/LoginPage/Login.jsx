@@ -28,14 +28,11 @@ export default function Login() {
     })
       .then((res) => {
         if (res.status == 202) {
-          console.log("user login successfully");
           dispatch(setUserAuth());
           return res.json();
         }
       })
       .then((data) => {
-        console.log(data);
-
         Cookies.set(
           "jwt",
           `${data.token}`,
@@ -53,8 +50,6 @@ export default function Login() {
   useEffect(() => {
     if (successLogin) {
       navigate("/");
-      console.log("asd");
-
       return;
     }
   }, [successLogin]);

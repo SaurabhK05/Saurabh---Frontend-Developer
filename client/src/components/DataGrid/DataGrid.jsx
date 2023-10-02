@@ -17,14 +17,12 @@ export default function DataGrid() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setAllRocketData(data);
       });
   };
 
   useEffect(() => {
     fetchData();
-    console.log("11");
   }, []);
 
   return (

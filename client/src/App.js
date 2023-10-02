@@ -8,9 +8,7 @@ import "./App.css";
 const App = () => {
   const isAuthenticated = useSelector((state) => state.isAuthUser);
 
-  React.useEffect(() => {
-    console.log(isAuthenticated);
-  }, [isAuthenticated]);
+  React.useEffect(() => {}, [isAuthenticated]);
   return (
     <div className="App">
       <Routes>

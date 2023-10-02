@@ -25,7 +25,6 @@ export default function Banner() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setRocketData(data);
       });
   };
@@ -61,16 +60,4 @@ export default function Banner() {
       )}
     </div>
   );
-}
-
-{
-  /* <div className="data-grid-card-action-btn">
-  <button onClick={openPopup} className="data-grid-card-learn-more">
-    Learn More
-  </button>
-  {isPopupOpen && <PopupContent onClose={closePopup} data={rocketData} />}
-  <a href={rocketData.wikipedia} target="blank">
-    <button className="data-grid-card-wiki">Wiki</button>
-  </a>
-</div>; */
 }
