@@ -1,8 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
+const Cookie = require("cookies");
 const dotEnv = require("dotenv").config().parsed;
 const authorizeUser = require("../middleware/authrization.js");
+
+const app = express();
+app.use(cookieParser());
 
 const users = {
   user1: { password: "password1" },
@@ -20,7 +25,7 @@ router.post("/login", (req, res) => {
   const token = jwt.sign({ username }, dotEnv.secretKey, {
     expiresIn: "1h",
   });
-  res.json({ message: "Login successful", token });
+  res.status(202).json({ message: "Login successful", token });
 });
 
 router.get("/admin", authorizeUser, (req, res) => {
